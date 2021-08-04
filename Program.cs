@@ -15,11 +15,32 @@ namespace SnakeAndLadder
             int player1Pos = START;
             Random rand = new Random();
 
-            int dieRoll = rand.Next(1, 7);
-
             Console.WriteLine("Game starts\n");
             Console.WriteLine("Player Position: " + player1Pos);
+
+            int dieRoll = rand.Next(1, 7);
+            int choice = rand.Next(0, 3);
+
             Console.WriteLine("No on Die: " + dieRoll);
+            Console.WriteLine("Choice: " + choice);
+
+            switch (choice)
+            {
+                case 1:
+                    Console.WriteLine("Ladder");
+                    player1Pos += dieRoll;
+                    Console.WriteLine("Player Position: " + player1Pos);
+                    break;
+                case 2:
+                    Console.WriteLine("Snake");
+                    player1Pos -= dieRoll;
+                    Console.WriteLine("Player Position: " + player1Pos);
+                    break;
+                default:
+                    Console.WriteLine("No play");
+                    Console.WriteLine("Player Position: " + player1Pos);
+                    break;
+            }
         }
     }
 }
