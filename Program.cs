@@ -11,6 +11,7 @@ namespace SnakeAndLadder
             /// Variables
             int START = 0;
             int END = 100;
+            int play = 0;
 
             int player1Pos = START;
             Random rand = new Random();
@@ -22,6 +23,9 @@ namespace SnakeAndLadder
             /// Game run
             while (player1Pos < END)
             {
+                /// Count the number of time die rolled
+                play++;
+
                 /// Rolling die
                 int dieRoll = rand.Next(1, 7);
                 int choice = rand.Next(0, 3);
@@ -48,7 +52,7 @@ namespace SnakeAndLadder
 
 
                 /// Check if player has reached below 0, then restart from 0
-                if (player1Pos < START )
+                if (player1Pos < START)
                 {
                     player1Pos = START;
                 }
@@ -67,6 +71,9 @@ namespace SnakeAndLadder
                 /// Display current position at each play
                 Console.WriteLine("Player Position: " + player1Pos + "\n");
             }
+
+            /// Display the count of die rolled
+            Console.WriteLine("Game played in " + play + " steps");
         }
     }
 }
