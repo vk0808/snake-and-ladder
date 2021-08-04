@@ -13,9 +13,13 @@ namespace SnakeAndLadder
             int END = 100;
 
             int player1Pos = START;
+            Random rand = new Random();
 
-            Console.WriteLine("Game starts");
+            int dieRoll = rand.Next(1, 7);
+
+            Console.WriteLine("Game starts\n");
             Console.WriteLine("Player Position: " + player1Pos);
+            Console.WriteLine("No on Die: " + dieRoll);
         }
     }
 }
